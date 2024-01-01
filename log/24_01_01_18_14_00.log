@@ -1,0 +1,13 @@
+Feature in use  :   zip
+Input folder    :   test\zip
+Output folder   :   output
+Format          :   .zip
+Filter          :   .*
+
+Zipping test\zip\adc to output\adc.zip
+Zipping test\zip\dio to output\dio.zip
+Zipping test\zip\i2c to output\i2c.zip
+Zipping test\zip\port to output\port.zip
+Zipping test\zip\pwm to output\pwm.zip
+Zipping test\zip\spi to output\spi.zip
+Zipping test\zip\uart to output\uart.zip
