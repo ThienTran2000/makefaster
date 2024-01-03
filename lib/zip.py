@@ -18,7 +18,6 @@ class zip:
         self.format = args.format
         self.filter = args.filter
         self.feature = args.subcommand
-        current_datetime = datetime.now()
 
     def display(self) -> str:
         print(f'Feature in use  :   {self.feature}')
