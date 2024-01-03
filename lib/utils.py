@@ -37,11 +37,15 @@ def dont_sleep() -> None:
         y=5,
     )
     time.sleep(5)
+    pyautogui.click()
+    pyautogui.click()
     pyautogui.moveTo(
         x= 1600, 
         y= 7,
     )
     time.sleep(5)
+    pyautogui.click()
+    pyautogui.click()
 
 def check_time(hour, minute):
     current_date = datetime.now()
