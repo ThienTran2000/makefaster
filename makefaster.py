@@ -1,6 +1,6 @@
 import argparse
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 
 sys.path.append('lib')
 
@@ -20,12 +20,12 @@ def main():
     parser_zip.set_defaults(func=zip.execute)
 
     # Add arguments for checkin_checkout feature
-    current_time = datetime.now().hour
+    default_time_checkout = datetime.now() + timedelta(minutes=1)
     parser_zip = subparsers.add_parser('checkin_checkout', help='Check-in Check-out automatically')
     parser_zip.add_argument('--hour_in', '-hi', type=int, default=8, help='The hour to check-in')
     parser_zip.add_argument('--minute_in', '-mi', type=int, default=30, help='The minute to check-in')
-    parser_zip.add_argument('--hour_out', '-ho', type=int, default=datetime.now().hour, help='The hour to check-out')
-    parser_zip.add_argument('--minute_out', '-mo', type=int, default=datetime.now().minute + 1, help='The minute to check-out')
+    parser_zip.add_argument('--hour_out', '-ho', type=int, default=default_time_checkout.hour, help='The hour to check-out')
+    parser_zip.add_argument('--minute_out', '-mo', type=int, default=default_time_checkout.minute, help='The minute to check-out')
     parser_zip.set_defaults(func=checkin_checkout.execute)
 
     parser.add_argument('-v', '--version', action='version', version='%(prog)s V1.00')
