@@ -17,11 +17,11 @@ class checkin_checkout:
         self.feature = args.subcommand
 
     def display(self) -> str:
-        print(f'Feature in use  :   {self.feature}')
-        print(f'Hour in         :   {self.hour_in}')
-        print(f'Minute in       :   {self.minute_in}')
-        print(f'Hour out        :   {self.hour_out}')
-        print(f'Minute out      :   {self.minute_out}\n')
+        print(f'Feature in use      :   {self.feature}')
+        print(f'Hour in             :   {self.hour_in}')
+        print(f'Minute in           :   {self.minute_in}')
+        print(f'Hour out            :   {self.hour_out}')
+        print(f'Minute out          :   {self.minute_out}\n')
 
     def execute(self) -> None:
         self.display()
@@ -45,6 +45,5 @@ class checkin_checkout:
                         utils.close_app('MyBv')
                         status_out = True
                 utils.dont_sleep()
-
         except KeyboardInterrupt:
             pass

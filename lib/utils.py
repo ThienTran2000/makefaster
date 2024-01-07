@@ -70,3 +70,12 @@ def close_app(App_name):
     if check_if_process_running(App_name_exe):
         os.system(f'taskkill /f /im {App_name_exe} > {os.devnull} 2>&1')
         print(f'Closed the app {App_name} at {datetime.now()}.')
+
+def user_input(prompt, choices) -> str:
+    while True:
+        user_input = input(prompt).strip().lower()
+        if user_input in [choice.lower() for choice in choices]:
+            return user_input
+        else:
+            print(f'Invalid input. Please enter ({"/".join(choices)}).')
+    

@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 sys.path.append('lib')
 
-from lib import zip, checkin_checkout
+from lib import zip, checkin_checkout, remove
 
 def main():
     parser = argparse.ArgumentParser(description='This package to make your things are faster.')
@@ -27,6 +27,14 @@ def main():
     parser_zip.add_argument('--hour_out', '-ho', type=int, default=default_time_checkout.hour, help='The hour to check-out')
     parser_zip.add_argument('--minute_out', '-mo', type=int, default=default_time_checkout.minute, help='The minute to check-out')
     parser_zip.set_defaults(func=checkin_checkout.execute)
+
+    # Add arguments for remove feature
+    parser_remove = subparsers.add_parser('remove', help='Remove the files, folders')
+    parser_remove.add_argument('-filter', help='The filter as a string regular expression', required=True)
+    parser_remove.add_argument('--input_folder', '-i', type=str, default='./', help='The path of folder contain the specific folders to remove')
+    parser_remove.add_argument('--type', '-t', type=str, choices=['file', 'folder', 'both'], default='both', help='The type to remove, both present for file and folder')
+    parser_remove.add_argument('--delete', '-d', action='store_true', default=False, help='The remove item will not be moved to the trash, but will be permanently deleted on the computer. Default value of this option is False')
+    parser_remove.set_defaults(func=remove.execute)
 
     parser.add_argument('-v', '--version', action='version', version='%(prog)s V1.00')
 

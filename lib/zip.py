@@ -20,11 +20,11 @@ class zip:
         self.feature = args.subcommand
 
     def display(self) -> str:
-        print(f'Feature in use  :   {self.feature}')
-        print(f'Input folder    :   {self.input_folder}')
-        print(f'Output folder   :   {self.output_folder}')
-        print(f'Format          :   {self.format}')
-        print(f'Filter          :   {self.filter}\n')
+        print(f'Feature in use      :   {self.feature}')
+        print(f'Input folder        :   {self.input_folder}')
+        print(f'Output folder       :   {self.output_folder}')
+        print(f'Format              :   {self.format}')
+        print(f'Filter              :   {self.filter}\n')
 
     def format_to_zip(self) -> None:
         items_to_zip = utils.get_sub_folder_path(self.input_folder)
