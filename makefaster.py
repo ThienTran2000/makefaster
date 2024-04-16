@@ -21,12 +21,12 @@ def main():
 
     # Add arguments for checkin_checkout feature
     default_time_checkout = datetime.now() + timedelta(minutes=1)
-    parser_zip = subparsers.add_parser('checkin_checkout', help='Check-in Check-out automatically')
-    parser_zip.add_argument('--hour_in', '-hi', type=int, default=8, help='The hour to check-in')
-    parser_zip.add_argument('--minute_in', '-mi', type=int, default=30, help='The minute to check-in')
-    parser_zip.add_argument('--hour_out', '-ho', type=int, default=default_time_checkout.hour, help='The hour to check-out')
-    parser_zip.add_argument('--minute_out', '-mo', type=int, default=default_time_checkout.minute, help='The minute to check-out')
-    parser_zip.set_defaults(func=checkin_checkout.execute)
+    parser_checkin_checkout = subparsers.add_parser('checkin_checkout', help='Check-in Check-out automatically')
+    parser_checkin_checkout.add_argument('--hour_in', '-hi', type=int, default=8, help='The hour to check-in')
+    parser_checkin_checkout.add_argument('--minute_in', '-mi', type=int, default=30, help='The minute to check-in')
+    parser_checkin_checkout.add_argument('--hour_out', '-ho', type=int, default=default_time_checkout.hour, help='The hour to check-out')
+    parser_checkin_checkout.add_argument('--minute_out', '-mo', type=int, default=default_time_checkout.minute, help='The minute to check-out')
+    parser_checkin_checkout.set_defaults(func=checkin_checkout.execute)
 
     # Add arguments for remove feature
     parser_remove = subparsers.add_parser('remove', help='Remove the files, folders')
